@@ -1,5 +1,5 @@
 {
-  "name": "@aaqu/node-red-contrib-aaqu-pdf",
+  "name": "@aaqu/node-red-aaqu-pdf",
   "version": "0.1.0",
   "description": "node-red pdf creator",
   "main": "index.js",
