@@ -1,0 +1,96 @@
+[
+  {
+    "id": "849ed833a220e0de",
+    "type": "http request",
+    "z": "19cb94d5b096ef08",
+    "name": "http request pdf",
+    "method": "GET",
+    "ret": "bin",
+    "paytoqs": "ignore",
+    "url": "https://www.w3.org/2014/02/wot/slides/conway-jones.pdf",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "insecureHTTPParser": false,
+    "authType": "",
+    "senderr": false,
+    "headers": [],
+    "x": 500,
+    "y": 1180,
+    "wires": [
+      [
+        "14a6d0b0d27a8ab9"
+      ]
+    ]
+  },
+  {
+    "id": "b00a362a3fa631ce",
+    "type": "image viewer",
+    "z": "19cb94d5b096ef08",
+    "name": "",
+    "width": "400",
+    "data": "payload",
+    "dataType": "msg",
+    "active": true,
+    "x": 1070,
+    "y": 1180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6f454b1857d84482",
+    "type": "inject",
+    "z": "19cb94d5b096ef08",
+    "name": "",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 330,
+    "y": 1180,
+    "wires": [
+      [
+        "849ed833a220e0de"
+      ]
+    ]
+  },
+  {
+    "id": "14a6d0b0d27a8ab9",
+    "type": "pdf-get-page",
+    "z": "19cb94d5b096ef08",
+    "name": "",
+    "pdfPage": "3",
+    "x": 690,
+    "y": 1180,
+    "wires": [
+      [
+        "97821b079b898c3a"
+      ]
+    ]
+  },
+  {
+    "id": "97821b079b898c3a",
+    "type": "pdf-to-img",
+    "z": "19cb94d5b096ef08",
+    "name": "",
+    "x": 870,
+    "y": 1180,
+    "wires": [
+      [
+        "b00a362a3fa631ce"
+      ]
+    ]
+  },
+  {
+    "id": "53c5d60a126b2217",
+    "type": "global-config",
+    "env": [],
+    "modules": {
+      "node-red-contrib-image-tools": "2.1.1",
+      "@aaqu/node-red-aaqu-pdf": "0.3.0"
+    }
+  }
+]
