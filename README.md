@@ -1,8 +1,14 @@
+## Important Information
+
+Your support in the ongoing development of this library would be sincerely appreciated. 🙂
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%23FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/mazuralbert)
 # @aaqu/node-red-aaqu-pdf
 
 A [Node-RED](https://nodered.org/) node for extracting a single page from a PDF document.
 
 This module provides a custom Node-RED node that takes a **PDF buffer** as input and outputs a **new PDF buffer** containing only the specified page.
+
+![example.png](img/example.png)
 
 ---
 
