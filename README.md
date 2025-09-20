@@ -1,4 +1,4 @@
-# node-red-contrib-aaqu-pdf
+# @aaqu/node-red-aaqu-pdf
 
 A [Node-RED](https://nodered.org/) node for extracting a single page from a PDF document.
 
@@ -20,7 +20,7 @@ This module provides a custom Node-RED node that takes a **PDF buffer** as input
 Run the following command inside your Node-RED user directory (typically `~/.node-red`):
 
 ```bash
-npm install node-red-contrib-aaqu-pdf
+npm install @aaqu/node-red-aaqu-pdf
 ```
 
 Then restart Node-RED and the new node will appear in the editor palette.
