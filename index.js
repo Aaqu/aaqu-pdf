@@ -6,20 +6,30 @@ module.exports = function (RED) {
     this.pdfPage = config.pdfPage;
     var node = this;
     node.on("input", async function (msg) {
-      const pdfDoc = await pdfLib.PDFDocument.load(msg.payload);
-      //const pages = pdfDoc.getPageCount();
-      // console.log(pages);
+      try {
+        const pdfDoc = await pdfLib.PDFDocument.load(msg.payload);
+        //const pages = pdfDoc.getPageCount();
+        // console.log(pages);
 
-      const newPDF = await pdfLib.PDFDocument.create();
+        const newPDF = await pdfLib.PDFDocument.create();
 
-      const copiedPages = await newPDF.copyPages(pdfDoc, [node.pdfPage - 1]);
-      const [page] = copiedPages;
+        const copiedPages = await newPDF.copyPages(pdfDoc, [node.pdfPage - 1]);
+        const [page] = copiedPages;
 
-      newPDF.addPage(page);
-      const pdfBytes = await newPDF.save();
+        newPDF.addPage(page);
+        const pdfBytes = await newPDF.save();
 
-      msg.payload = Buffer.from(pdfBytes);
-      node.send(msg);
+        msg.payload = Buffer.from(pdfBytes);
+        node.send(msg);
+      } catch (err) {
+        this.status({
+          fill: "red",
+          shape: "square",
+          text: "Error parsing PDF",
+        });
+
+        node.error(err);
+      }
     });
   }
   RED.nodes.registerType("pdf-get-page", PDFGetPageNode);

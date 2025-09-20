@@ -1,0 +1,98 @@
+[
+  {
+    "id": "089d17553fb029f3",
+    "type": "pdf-get-page",
+    "z": "19cb94d5b096ef08",
+    "name": "",
+    "pdfPage": "7",
+    "x": 710,
+    "y": 900,
+    "wires": [
+      [
+        "6e5b98ce359af5b2"
+      ]
+    ]
+  },
+  {
+    "id": "c53e1fd40bbfd421",
+    "type": "inject",
+    "z": "19cb94d5b096ef08",
+    "name": "",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 250,
+    "y": 900,
+    "wires": [
+      [
+        "db7788eb72014467"
+      ]
+    ]
+  },
+  {
+    "id": "db7788eb72014467",
+    "type": "file in",
+    "z": "19cb94d5b096ef08",
+    "name": "",
+    "filename": "/Users/xyz/Downloads/test.pdf",
+    "filenameType": "str",
+    "format": "",
+    "chunk": false,
+    "sendError": false,
+    "encoding": "none",
+    "allProps": false,
+    "x": 470,
+    "y": 900,
+    "wires": [
+      [
+        "089d17553fb029f3"
+      ]
+    ]
+  },
+  {
+    "id": "6acc37ea7a6237e3",
+    "type": "debug",
+    "z": "19cb94d5b096ef08",
+    "name": "debug 3",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1220,
+    "y": 900,
+    "wires": []
+  },
+  {
+    "id": "6e5b98ce359af5b2",
+    "type": "file",
+    "z": "19cb94d5b096ef08",
+    "name": "",
+    "filename": "/Users/xyz/Downloads/test-export.pdf",
+    "filenameType": "str",
+    "appendNewline": true,
+    "createDir": false,
+    "overwriteFile": "true",
+    "encoding": "none",
+    "x": 970,
+    "y": 900,
+    "wires": [
+      [
+        "6acc37ea7a6237e3"
+      ]
+    ]
+  },
+  {
+    "id": "732762261c345b19",
+    "type": "global-config",
+    "env": [],
+    "modules": {
+      "@aaqu/node-red-aaqu-pdf": "0.1.3"
+    }
+  }
+]

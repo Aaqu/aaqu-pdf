@@ -1,33 +1,34 @@
 <script type="text/javascript">
-    RED.nodes.registerType('pdf-get-page',{
-        category: 'function',
-        color: '#a6bbcf',
-        defaults: {
-            name: {value:""},
-            pdfPage: {value: 0, validate: RED.validators.number() }
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "file.svg",
-        label: function() {
-            return this.name||"pdf-get-page";
-        }
-    });
+  RED.nodes.registerType("pdf-get-page", {
+    category: "function",
+    color: "#a6bbcf",
+    defaults: {
+      name: { value: "" },
+      pdfPage: { value: 1, required: false, validate: RED.validators.number() },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "file.svg",
+    label: function () {
+      return this.name || "pdf-get-page";
+    },
+  });
 </script>
 
 <script type="text/html" data-template-name="pdf-get-page">
-    <div class="form-row">
-        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name" />
+  </div>
 
-    <div class="form-row">
-        <label for="node-input-pdfPage"><i class="fa fa-tag"></i> Select pdf page</label>
-        <input type="number" id="node-input-pdfPage" placeholder="Page">
-    </div>
+  <div class="form-row">
+    <label for="node-input-pdfPage"
+      ><i class="fa fa-tag"></i> Select pdf page</label
+    >
+    <input type="number" id="node-input-pdfPage" placeholder="Page" />
+  </div>
 </script>
 
-
 <script type="text/html" data-help-name="pdf-get-page">
-    <p>A simple node that input pdf buffer and return selected page in buffer.</p>
+  <p>A simple node that input pdf buffer and return selected page in buffer.</p>
 </script>
