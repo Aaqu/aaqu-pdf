@@ -1,8 +1,8 @@
 {
   "name": "@aaqu/node-red-aaqu-pdf",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "node-red pdf creator",
-  "main": "index.js",
+  "main": "pdf-get-page.js",
   "scripts": {
     "node-red": "node-red"
   },
@@ -12,16 +12,24 @@
   "node-red": {
     "version": ">=4.0.0",
     "nodes": {
-      "pdf-get-page": "index.js"
+      "pdf-get-page": "pdf-get-page.js",
+      "pdf-to-img": "pdf-to-img.js"
     }
   },
-  "keywords": ["node-red", "pdf", "aaqu"],
+  "keywords": [
+    "node-red",
+    "pdf",
+    "aaqu"
+  ],
   "author": {
     "name": "Mazur Albert",
-    "url": "https://mazuralbert.pl"
+    "url": "https://mazuralbert.pl",
+    "email": "kontakt@mazuralbert.pl"
   },
   "dependencies": {
-    "pdf-lib": "^1.17.1"
+    "canvas": "^3.2.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-to-img": "^5.0.0"
   },
   "devDependencies": {
     "prettier": "^3.6.2"
