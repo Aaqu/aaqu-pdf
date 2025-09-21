@@ -27,7 +27,6 @@
     "email": "kontakt@mazuralbert.pl"
   },
   "dependencies": {
-    "canvas": "^3.2.0",
     "pdf-lib": "^1.17.1",
     "pdf-to-img": "^5.0.0"
   },
