@@ -13,7 +13,10 @@
     "version": ">=4.0.0",
     "nodes": {
       "pdf-get-page": "pdf-get-page.js",
-      "pdf-to-img": "pdf-to-img.js"
+      "pdf-to-img": "pdf-to-img.js",
+      "pdf-create": "pdf-create.js",
+      "pdf-add-page": "pdf-add-page.js",
+      "pdf-save": "pdf-save.js"
     }
   },
   "keywords": [
