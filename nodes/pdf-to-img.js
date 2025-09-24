@@ -3,13 +3,13 @@ const { pdf } = require("pdf-to-img");
 module.exports = function (RED) {
   function PDFToImageNode(config) {
     RED.nodes.createNode(this, config);
-    // this.pdfPage = config.scale;
+    this.scale = config.scale;
     var node = this;
     node.on("input", async function (msg) {
       try {
         const pdfBuffer = msg.payload;
 
-        const document = await pdf(pdfBuffer, { scale: 3 });
+        const document = await pdf(pdfBuffer, { scale: node.scale });
         const page12buffer = await document.getPage(1);
 
         msg.payload = page12buffer;
@@ -17,7 +17,7 @@ module.exports = function (RED) {
       } catch (err) {
         this.status({
           fill: "red",
-          shape: "square",
+          shape: "ring",
           text: "Error parsing PDF to Image",
         });
 

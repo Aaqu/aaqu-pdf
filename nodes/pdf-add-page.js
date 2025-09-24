@@ -1,22 +1,24 @@
-// const pdfLib = require("pdf-lib");
-
 module.exports = function (RED) {
   function PDFAddPageNode(config) {
     RED.nodes.createNode(this, config);
-    var node = this;
-    node.on("input", async function (msg) {
+    this.width = Number(config.width || 595);
+    this.height = Number(config.height || 842);
+    const node = this;
+    node.on("input", function (msg) {
       try {
-        const pdfDoc = msg.pdfDoc.addPage();
+        const page = msg.pdfDoc.addPage([node.width, node.height]);
+
         msg = {
-          pdfDoc,
+          page: page,
+          pdfDoc: msg.pdfDoc,
         };
 
         node.send(msg);
       } catch (err) {
         this.status({
           fill: "red",
-          shape: "square",
-          text: "Error parsing PDF to Image",
+          shape: "ring",
+          text: "Error adding PDF page",
         });
 
         node.error(err);

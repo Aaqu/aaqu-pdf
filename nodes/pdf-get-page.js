@@ -24,7 +24,7 @@ module.exports = function (RED) {
       } catch (err) {
         this.status({
           fill: "red",
-          shape: "square",
+          shape: "ring",
           text: "Error parsing PDF",
         });
 

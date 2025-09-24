@@ -1,15 +1,16 @@
 <script type="text/javascript">
   RED.nodes.registerType("pdf-create", {
-    category: "function",
-    color: "#a6bbcf",
+    category: "Aaqu PDF",
+    color: "#f5425d",
     defaults: {
       name: { value: "" },
     },
     inputs: 1,
     outputs: 1,
     icon: "file.svg",
+    paletteLabel: "pdf create",
     label: function () {
-      return this.name || "pdf-create";
+      return this.name || "pdf create";
     },
   });
 </script>
@@ -22,5 +23,5 @@
 </script>
 
 <script type="text/html" data-help-name="pdf-create">
-  <p>A simple node that input pdf buffer and return img.</p>
+  <p>Node to create pdf document.</p>
 </script>

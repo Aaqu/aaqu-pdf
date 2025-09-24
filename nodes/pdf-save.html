@@ -1,26 +1,27 @@
 <script type="text/javascript">
-  RED.nodes.registerType("pdf-add-page", {
-    category: "function",
-    color: "#a6bbcf",
+  RED.nodes.registerType("pdf-save", {
+    category: "Aaqu PDF",
+    color: "#f5425d",
     defaults: {
       name: { value: "" },
     },
     inputs: 1,
     outputs: 1,
     icon: "file.svg",
+    paletteLabel: "pdf save",
     label: function () {
-      return this.name || "pdf-awadd-page";
+      return this.name || "pdf save";
     },
   });
 </script>
 
-<script type="text/html" data-template-name="pdf-add-page">
+<script type="text/html" data-template-name="pdf-save">
   <div class="form-row">
     <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name" />
   </div>
 </script>
 
-<script type="text/html" data-help-name="pdf-add-page">
-  <p>A simple node that input pdf buffer and return img.</p>
+<script type="text/html" data-help-name="pdf-save">
+  <p>Node to save pdf document.</p>
 </script>
