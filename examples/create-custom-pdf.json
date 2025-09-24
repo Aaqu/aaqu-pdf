@@ -1,0 +1,235 @@
+[
+  {
+    "id": "5e5cbdd3c50fdfa8",
+    "type": "pdf-create",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "x": 270,
+    "y": 80,
+    "wires": [
+      [
+        "b410380ae4540c05"
+      ]
+    ]
+  },
+  {
+    "id": "0723b41a5ea96294",
+    "type": "inject",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 110,
+    "y": 80,
+    "wires": [
+      [
+        "5e5cbdd3c50fdfa8"
+      ]
+    ]
+  },
+  {
+    "id": "b410380ae4540c05",
+    "type": "pdf-add-page",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "width": "595",
+    "height": "842",
+    "x": 460,
+    "y": 80,
+    "wires": [
+      [
+        "017ab61165bbf7ef"
+      ]
+    ]
+  },
+  {
+    "id": "f707472db673e653",
+    "type": "pdf-to-img",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "scale": "1",
+    "x": 930,
+    "y": 340,
+    "wires": [
+      [
+        "6e1a14d70ffeb1ea"
+      ]
+    ]
+  },
+  {
+    "id": "6e1a14d70ffeb1ea",
+    "type": "image viewer",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "width": "300",
+    "data": "payload",
+    "dataType": "msg",
+    "active": true,
+    "x": 1110,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "75a1a683ddc0cfc8",
+    "type": "pdf-save",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "x": 760,
+    "y": 340,
+    "wires": [
+      [
+        "f707472db673e653",
+        "d96113d86b0b7eaf"
+      ]
+    ]
+  },
+  {
+    "id": "017ab61165bbf7ef",
+    "type": "pdf-draw-text",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "text": "Row 1",
+    "font": "CourierBold",
+    "fontSize": "70",
+    "posX": "50",
+    "posY": "600",
+    "color": "#000000",
+    "x": 570,
+    "y": 140,
+    "wires": [
+      [
+        "78d341d93a6f441c"
+      ]
+    ]
+  },
+  {
+    "id": "78d341d93a6f441c",
+    "type": "pdf-draw-text",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "text": "Text 2",
+    "font": "Helvetica",
+    "fontSize": "70",
+    "posX": "50",
+    "posY": "400",
+    "color": "#0e80d8",
+    "x": 570,
+    "y": 180,
+    "wires": [
+      [
+        "9bd6ce8c8613f691"
+      ]
+    ]
+  },
+  {
+    "id": "9bd6ce8c8613f691",
+    "type": "pdf-draw-text",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "text": "Text 3",
+    "font": "TimesRomanBoldItalic",
+    "fontSize": "30",
+    "posX": "50",
+    "posY": "200",
+    "color": "#0ced1b",
+    "x": 570,
+    "y": 220,
+    "wires": [
+      [
+        "ce51e629eec17175"
+      ]
+    ]
+  },
+  {
+    "id": "ce51e629eec17175",
+    "type": "pdf-add-page",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "width": "595",
+    "height": "842",
+    "x": 580,
+    "y": 280,
+    "wires": [
+      [
+        "3768ee9ea15f60a5"
+      ]
+    ]
+  },
+  {
+    "id": "7ca03dd7268eeaee",
+    "type": "image viewer",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "width": "300",
+    "data": "payload",
+    "dataType": "msg",
+    "active": true,
+    "x": 1110,
+    "y": 660,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "86be12f733c08523",
+    "type": "pdf-to-img",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "scale": "1",
+    "x": 930,
+    "y": 420,
+    "wires": [
+      [
+        "7ca03dd7268eeaee"
+      ]
+    ]
+  },
+  {
+    "id": "d96113d86b0b7eaf",
+    "type": "pdf-get-page",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "pdfPage": "2",
+    "x": 750,
+    "y": 420,
+    "wires": [
+      [
+        "86be12f733c08523"
+      ]
+    ]
+  },
+  {
+    "id": "3768ee9ea15f60a5",
+    "type": "pdf-draw-text",
+    "z": "8f32c806fc0c3278",
+    "name": "",
+    "text": "Text Page 2",
+    "font": "Helvetica",
+    "fontSize": "100",
+    "posX": "50",
+    "posY": "400",
+    "color": "#ae24e0",
+    "x": 570,
+    "y": 340,
+    "wires": [
+      [
+        "75a1a683ddc0cfc8"
+      ]
+    ]
+  },
+  {
+    "id": "698f669ace488a64",
+    "type": "global-config",
+    "env": [],
+    "modules": {
+      "@aaqu/node-red-aaqu-pdf": "0.4.2",
+      "node-red-contrib-image-tools": "2.1.1"
+    }
+  }
+]
