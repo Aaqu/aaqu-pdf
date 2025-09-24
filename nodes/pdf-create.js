@@ -3,7 +3,9 @@ const { PDFDocument } = require("pdf-lib");
 module.exports = function (RED) {
   function PDFCreateNode(config) {
     RED.nodes.createNode(this, config);
-    var node = this;
+
+    const node = this;
+
     node.on("input", async function (msg) {
       try {
         msg = {

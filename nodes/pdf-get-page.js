@@ -1,17 +1,20 @@
-var pdfLib = require("pdf-lib");
+const { PDFDocument } = require("pdf-lib");
 
 module.exports = function (RED) {
   function PDFGetPageNode(config) {
     RED.nodes.createNode(this, config);
+
     this.pdfPage = config.pdfPage;
-    var node = this;
+
+    const node = this;
+
     node.on("input", async function (msg) {
       try {
-        const pdfDoc = await pdfLib.PDFDocument.load(msg.payload);
+        const pdfDoc = await PDFDocument.load(msg.payload);
         //const pages = pdfDoc.getPageCount();
         // console.log(pages);
 
-        const newPDF = await pdfLib.PDFDocument.create();
+        const newPDF = await PDFDocument.create();
 
         const copiedPages = await newPDF.copyPages(pdfDoc, [node.pdfPage - 1]);
         const [page] = copiedPages;

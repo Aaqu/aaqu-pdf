@@ -3,8 +3,11 @@ const { pdf } = require("pdf-to-img");
 module.exports = function (RED) {
   function PDFToImageNode(config) {
     RED.nodes.createNode(this, config);
+
     this.scale = config.scale;
-    var node = this;
+
+    const node = this;
+
     node.on("input", async function (msg) {
       try {
         const pdfBuffer = msg.payload;

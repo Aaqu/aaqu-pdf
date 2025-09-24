@@ -2,7 +2,8 @@ module.exports = function (RED) {
   function PDFSaveNode(config) {
     RED.nodes.createNode(this, config);
 
-    var node = this;
+    const node = this;
+
     node.on("input", async function (msg) {
       try {
         msg = {

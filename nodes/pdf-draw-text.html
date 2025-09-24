@@ -9,6 +9,7 @@
         required: false,
         // validate: RED.validators.string(),
       },
+      font: { value: "TimesRoman", required: false },
       fontSize: {
         value: 12,
         required: true,
@@ -19,11 +20,12 @@
         required: true,
         validate: RED.validators.number(),
       },
-      poxY: {
+      posY: {
         value: 0,
         required: true,
         validate: RED.validators.number(),
       },
+      color: { value: "#000000" },
     },
     inputs: 1,
     outputs: 1,
@@ -42,23 +44,54 @@
   </div>
 
   <div class="form-row">
-    <label for="node-input-text"><i class="fa fa-tag"></i> Name</label>
+    <label for="node-input-text"
+      ><i class="fa fa-pencil-square-o"></i> Text</label
+    >
     <input type="text" id="node-input-text" placeholder="Text" />
   </div>
 
   <div class="form-row">
-    <label for="node-input-fontSize"><i class="fa fa-text"></i>Font Size</label>
+    <label for="node-input-font"><i class="fa fa-font"></i> Choice</label>
+    <select id="node-input-font">
+      <option value="Courier">Courier</option>
+      <option value="CourierBold">Courier Bold</option>
+      <option value="CourierOblique">Courier Oblique</option>
+      <option value="CourierBoldOblique">Courier Bold Oblique</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="HelveticaBold">Helvetica Bold</option>
+      <option value="HelveticaOblique">Helvetica Oblique</option>
+      <option value="HelveticaBoldOblique">Helvetica Bold Oblique</option>
+      <option value="TimesRoman" selected>Times Roman</option>
+      <option value="TimesRomanBold">Times Bold</option>
+      <option value="TimesRomanItalic">Times Italic</option>
+      <option value="TimesRomanBoldItalic">Times Bold Italic</option>
+      <option value="Symbol">Symbol</option>
+      <option value="ZapfDingbats">Zapf Dingbats</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-fontSize"
+      ><i class="fa fa-text-height"></i> Font Size</label
+    >
     <input type="number" id="node-input-fontSize" />
   </div>
 
   <div class="form-row">
-    <label for="node-input-posX"><i class="fa fa-text"></i>x</label>
+    <label for="node-input-posX"><i class="fa fa-arrows-h"></i> x</label>
     <input type="number" id="node-input-posX" />
   </div>
 
   <div class="form-row">
-    <label for="node-input-poxY"><i class="fa fa-text"></i>y</label>
-    <input type="number" id="node-input-poxY" />
+    <label for="node-input-posY"><i class="fa fa-arrows-v"></i> y</label>
+    <input type="number" id="node-input-posY" />
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-color"
+      ><i class="fa fa-paint-brush"></i> Color</label
+    >
+    <input type="color" id="node-input-color" style="width: 100px;" />
   </div>
 </script>
 
