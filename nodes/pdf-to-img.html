@@ -1,32 +1,31 @@
 <script type="text/javascript">
   RED.nodes.registerType("pdf-to-img", {
-    category: "function",
-    color: "#a6bbcf",
+    category: "Aaqu PDF",
+    color: "#f5425d",
     defaults: {
       name: { value: "" },
-      // pdfPage: { value: 1, required: false, validate: RED.validators.number() },
+      scale: { value: 1, required: false, validate: RED.validators.number() },
     },
     inputs: 1,
     outputs: 1,
     icon: "file.svg",
+    paletteLabel: "pdf to img",
     label: function () {
-      return this.name || "pdf-to-img";
+      return this.name || "pdf to img";
     },
   });
 </script>
 
 <script type="text/html" data-template-name="pdf-to-img">
   <div class="form-row">
-    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <label for="node-input-name"><i class="fa fa-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name" />
   </div>
 
-  <!--  <div class="form-row">-->
-  <!--    <label for="node-input-pdfPage"-->
-  <!--      ><i class="fa fa-tag"></i> Select pdf page</label-->
-  <!--    >-->
-  <!--    <input type="number" id="node-input-pdfPage" placeholder="Page" />-->
-  <!--  </div>-->
+  <div class="form-row">
+    <label for="node-input-scale"><i class="fa fa-tag"></i>Scale</label>
+    <input type="number" id="node-input-scale" placeholder="Page" />
+  </div>
 </script>
 
 <script type="text/html" data-help-name="pdf-to-img">

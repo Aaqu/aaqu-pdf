@@ -1,7 +1,7 @@
 <script type="text/javascript">
   RED.nodes.registerType("pdf-get-page", {
-    category: "function",
-    color: "#a6bbcf",
+    category: "Aaqu PDF",
+    color: "#f5425d",
     defaults: {
       name: { value: "" },
       pdfPage: { value: 1, required: false, validate: RED.validators.number() },
@@ -9,8 +9,9 @@
     inputs: 1,
     outputs: 1,
     icon: "file.svg",
+    paletteLabel: "pdf get page",
     label: function () {
-      return this.name || "pdf-get-page";
+      return this.name || "pdf get page";
     },
   });
 </script>
@@ -22,9 +23,7 @@
   </div>
 
   <div class="form-row">
-    <label for="node-input-pdfPage"
-      ><i class="fa fa-tag"></i> Select pdf page</label
-    >
+    <label for="node-input-pdfPage"><i class="fa fa-tag"></i>Page</label>
     <input type="number" id="node-input-pdfPage" placeholder="Page" />
   </div>
 </script>
