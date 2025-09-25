@@ -13,12 +13,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
@@ -67,7 +65,7 @@ jobs:
                 repo: context.repo.repo,
                 tag_name: `node-red-aaqu-pdf@${version}`,
                 name: `node-red-aaqu-pdf@${version}`,
-                body: `New version of package v${version}`,
+                body: `Package v${version}`,
               });
             } catch (e) {
               core.setFailed(e.message);
